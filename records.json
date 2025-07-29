@@ -1,0 +1,17 @@
+{
+  "questions": [
+    {
+      "number": 1,
+      "status": true,
+      "question": "Two Sum",
+      "note": "class Solution {\npublic:\n    vector<int> twoSum(vector<int>& nums, int target) {\n        // vector<int> ans;\n        // for(int i = 0; i<nums.size()-1;i++){\n        //     for(int j = i+1; j<nums.size();j++){\n        //         int temp = nums[i]+nums[j];\n        //         if(temp==target){\n        //             ans.push_back(i);\n        //             ans.push_back(j);\n        //             break;\n        //         }\n        //     }\n        // }\n        // return ans;\n        \n        // Thinking of getting the subtracted value from the target, and checking if we have that already, if not add it to a set or map\n        // ex: T=9, i0=2, Sub=9-2=7, search for 7 in the map, if not found add 2 and move ahead\n        // map --> item -- index\n        unordered_map<int, int>hash;\n        for(int i=0;i<nums.size();i++){\n            hash[nums[i]]=i;\n        }\n\n        for(int i=0;i<nums.size();i++){\n            int complement = target - nums[i];\n            if(hash.find(complement) != hash.end() && hash[complement] != i){\n                return{i, hash[complement]};\n            }\n        }\n        return {};\n    }\n};",
+      "name": "Two Sum"
+    },
+    {
+      "number": 24,
+      "status": false,
+      "name": "Merge K sorted list",
+      "note": ""
+    }
+  ]
+}
